@@ -22,6 +22,7 @@
 		189E686018C7FB8A00FBD2C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189E683F18C7FB8A00FBD2C2 /* UIKit.framework */; };
 		189E686818C7FB8A00FBD2C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 189E686618C7FB8A00FBD2C2 /* InfoPlist.strings */; };
 		189E686A18C7FB8A00FBD2C2 /* AFMScannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 189E686918C7FB8A00FBD2C2 /* AFMScannerTests.m */; };
+		189E687518C808AE00FBD2C2 /* Census.m in Sources */ = {isa = PBXBuildFile; fileRef = 189E687418C808AE00FBD2C2 /* Census.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		189E686518C7FB8A00FBD2C2 /* AFMScannerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AFMScannerTests-Info.plist"; sourceTree = "<group>"; };
 		189E686718C7FB8A00FBD2C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		189E686918C7FB8A00FBD2C2 /* AFMScannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFMScannerTests.m; sourceTree = "<group>"; };
+		189E687318C808AE00FBD2C2 /* Census.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Census.h; sourceTree = "<group>"; };
+		189E687418C808AE00FBD2C2 /* Census.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Census.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				189E685418C7FB8A00FBD2C2 /* DetailViewController.m */,
 				189E685618C7FB8A00FBD2C2 /* Images.xcassets */,
 				189E684218C7FB8A00FBD2C2 /* Supporting Files */,
+				189E687318C808AE00FBD2C2 /* Census.h */,
+				189E687418C808AE00FBD2C2 /* Census.m */,
 			);
 			path = AFMScanner;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 				189E684C18C7FB8A00FBD2C2 /* AppDelegate.m in Sources */,
 				189E685218C7FB8A00FBD2C2 /* MasterViewController.m in Sources */,
 				189E684818C7FB8A00FBD2C2 /* main.m in Sources */,
+				189E687518C808AE00FBD2C2 /* Census.m in Sources */,
 				189E685518C7FB8A00FBD2C2 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

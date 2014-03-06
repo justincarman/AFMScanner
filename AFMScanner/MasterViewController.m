@@ -7,8 +7,8 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import "Census.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -30,6 +30,34 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    NSURL *url = [NSURL URLWithString:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetMostRecentCensus"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        //Parse Data
+        NSError *jsonError;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+        _objects = [[NSMutableArray alloc] init];
+        
+        if (json) {
+            for (NSDictionary *jsonCourse in json){
+                NSLog(@"This is a census: %@", [jsonCourse objectForKey:@"CensusNumber"]);
+                Census *census = [[Census alloc]init];
+                [census setCensusName:[jsonCourse objectForKey:@"CensusNumber"]];
+                [census setCensusID:[jsonCourse objectForKey:@"CensusID"]];
+                [_objects addObject:census];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[self tableView] reloadData];
+                });
+            }
+        }
+        else
+        {
+            NSLog(@"An error occurred: %@", jsonError);
+        }
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning
