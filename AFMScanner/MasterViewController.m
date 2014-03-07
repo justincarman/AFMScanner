@@ -36,27 +36,31 @@
     [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         //Parse Data
         NSError *jsonError;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
-        _objects = [[NSMutableArray alloc] init];
-        
-        if (json) {
-            for (NSDictionary *jsonCourse in json){
-                NSLog(@"This is a census: %@", [jsonCourse objectForKey:@"CensusNumber"]);
-                Census *census = [[Census alloc]init];
-                [census setCensusName:[jsonCourse objectForKey:@"CensusNumber"]];
-                [census setCensusID:[jsonCourse objectForKey:@"CensusID"]];
-                [_objects addObject:census];
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [[self tableView] reloadData];
-                });
+        if (data)
+        {
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+            _objects = [[NSMutableArray alloc] init];
+            
+            if (json) {
+                for (NSDictionary *jsonCourse in json){
+                    NSLog(@"This is a census: %@", [jsonCourse objectForKey:@"CensusNumber"]);
+                    Census *census = [[Census alloc]init];
+                    [census setCensusName:[jsonCourse objectForKey:@"CensusNumber"]];
+                    [census setCensusID:[jsonCourse objectForKey:@"CensusID"]];
+                    [_objects addObject:census];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [[self tableView] reloadData];
+                    });
+                }
+            }
+            else {
+                NSLog(@"An error occurred: %@", jsonError);
             }
         }
-        else
-        {
-            NSLog(@"An error occurred: %@", jsonError);
+        else {
+            NSLog(@"Unable to connect to webservice");
         }
-        
     }];
 }
 
@@ -133,7 +137,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
+        NSString *object = _objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
