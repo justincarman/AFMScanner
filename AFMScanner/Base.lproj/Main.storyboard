@@ -89,6 +89,7 @@
                                 </state>
                                 <connections>
                                     <action selector="scanButtonClick:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="5nA-Zd-r2N"/>
+                                    <segue destination="bAK-i1-s3F" kind="push" id="IdK-hf-Ujz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1YO-NC-QEC">
@@ -113,6 +114,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="902" y="64"/>
+        </scene>
+        <!--Scanner View Controller - Scan Barcode-->
+        <scene sceneID="Sum-eA-TTR">
+            <objects>
+                <viewController id="bAK-i1-s3F" customClass="ScannerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wW6-ed-v2b"/>
+                        <viewControllerLayoutGuide type="bottom" id="wiV-Ll-tcl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QCG-9x-w60">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Scan Barcode" id="Skq-Lj-TOF"/>
+                    <connections>
+                        <segue destination="DWe-0h-QkU" kind="unwind" identifier="unwindFromScannerToList" unwindAction="unwindFromScanner:" id="tHl-jj-2QX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2AP-Gg-1vC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="DWe-0h-QkU" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1356" y="64"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

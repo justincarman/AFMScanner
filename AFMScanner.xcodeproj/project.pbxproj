@@ -23,6 +23,7 @@
 		189E686818C7FB8A00FBD2C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 189E686618C7FB8A00FBD2C2 /* InfoPlist.strings */; };
 		189E686A18C7FB8A00FBD2C2 /* AFMScannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 189E686918C7FB8A00FBD2C2 /* AFMScannerTests.m */; };
 		189E687518C808AE00FBD2C2 /* Census.m in Sources */ = {isa = PBXBuildFile; fileRef = 189E687418C808AE00FBD2C2 /* Census.m */; };
+		18E5D47518CB9C48007E0238 /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D47418CB9C48007E0238 /* ScannerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		189E686918C7FB8A00FBD2C2 /* AFMScannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFMScannerTests.m; sourceTree = "<group>"; };
 		189E687318C808AE00FBD2C2 /* Census.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Census.h; sourceTree = "<group>"; };
 		189E687418C808AE00FBD2C2 /* Census.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Census.m; sourceTree = "<group>"; };
+		18E5D47318CB9C48007E0238 /* ScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
+		18E5D47418CB9C48007E0238 /* ScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				189E684218C7FB8A00FBD2C2 /* Supporting Files */,
 				189E687318C808AE00FBD2C2 /* Census.h */,
 				189E687418C808AE00FBD2C2 /* Census.m */,
+				18E5D47318CB9C48007E0238 /* ScannerViewController.h */,
+				18E5D47418CB9C48007E0238 /* ScannerViewController.m */,
 			);
 			path = AFMScanner;
 			sourceTree = "<group>";
@@ -209,6 +214,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Justin Carman";
 				TargetAttributes = {
+					189E683718C7FB8900FBD2C2 = {
+						DevelopmentTeam = K2XJTHQ37Z;
+					};
 					189E685B18C7FB8A00FBD2C2 = {
 						TestTargetID = 189E683718C7FB8900FBD2C2;
 					};
@@ -260,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				189E684C18C7FB8A00FBD2C2 /* AppDelegate.m in Sources */,
+				18E5D47518CB9C48007E0238 /* ScannerViewController.m in Sources */,
 				189E685218C7FB8A00FBD2C2 /* MasterViewController.m in Sources */,
 				189E684818C7FB8A00FBD2C2 /* main.m in Sources */,
 				189E687518C808AE00FBD2C2 /* Census.m in Sources */,
@@ -390,10 +399,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AFMScanner/AFMScanner-Prefix.pch";
 				INFOPLIST_FILE = "AFMScanner/AFMScanner-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -403,10 +415,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AFMScanner/AFMScanner-Prefix.pch";
 				INFOPLIST_FILE = "AFMScanner/AFMScanner-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -472,6 +487,7 @@
 				189E686F18C7FB8A00FBD2C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		189E687018C7FB8A00FBD2C2 /* Build configuration list for PBXNativeTarget "AFMScannerTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +496,7 @@
 				189E687218C7FB8A00FBD2C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
