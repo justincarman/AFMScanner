@@ -21,6 +21,7 @@
 //    UILabel *_label;
 }
 - (void)configureView;
+- (void)barCodeFound;
 @end
 
 @implementation DetailViewController
@@ -40,21 +41,6 @@
 -(IBAction)scanButtonClick:(id)sender
 {
     NSLog(@"Button clicked");
-    
-//    _highlightView = [[UIView alloc] init];
-//    _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
-//    _highlightView.layer.borderColor = [UIColor greenColor].CGColor;
-//    _highlightView.layer.borderWidth = 3;
-//    [self.view addSubview:_highlightView];
-//    
-//    _label = [[UILabel alloc] init];
-//    _label.frame = CGRectMake(0, self.view.bounds.size.height - 40, self.view.bounds.size.width, 40);
-//    _label.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-//    _label.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.65];
-//    _label.textColor = [UIColor whiteColor];
-//    _label.textAlignment = NSTextAlignmentCenter;
-//    _label.text = @"(none)";
-//    [self.view addSubview:_label];
     
     _session = [[AVCaptureSession alloc]init];
     _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
@@ -79,8 +65,6 @@
     NSLog(@"Before running");
     [_session startRunning];
     NSLog(@"After running");
-//    [self.view bringSubviewToFront:_highlightView];
-//    [self.view bringSubviewToFront:_label];
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
@@ -106,19 +90,22 @@
         if (detectionString != nil)
         {
             [self setDetailItem:detectionString];
-            [_prevLayer removeFromSuperlayer];
-            [_session stopRunning];
+            [self barCodeFound];
             break;
         }
     }
     
     //_highlightView.frame = highlightViewRect;
 }
-
+- (void)barCodeFound
+{
+    // If the barcode is found, lets do some cleanup
+    [_prevLayer removeFromSuperlayer];
+    [_session stopRunning];
+}
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [self.detailItem description];
     }
@@ -129,6 +116,18 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    
+    // listen for going into the background and stop the session
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(applicationWillEnterForeground:)
+     name:UIApplicationWillEnterForegroundNotification
+     object:nil];
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(applicationDidEnterBackground:)
+     name:UIApplicationDidEnterBackgroundNotification
+     object:nil];
 }
 
 - (void)didReceiveMemoryWarning
