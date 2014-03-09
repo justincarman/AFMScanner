@@ -6,12 +6,15 @@
 //  Copyright (c) 2014 Justin Carman. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "JSONModel.h"
 
-@interface Census : NSObject
+@interface Census : JSONModel
 
-@property (nonatomic, strong) NSString *CensusName;
+@property (nonatomic, strong) NSString *CensusNumber;
 @property (nonatomic, strong) NSString *CensusID;
 @property (nonatomic, strong) NSString *CompletedDate;
+@property (nonatomic, strong) NSString *CensusStartDate;
+@property (nonatomic, strong) NSString *CensusEndDate;
+@property (assign, nonatomic, readonly) BOOL isCensusCompleted;
 
 @end

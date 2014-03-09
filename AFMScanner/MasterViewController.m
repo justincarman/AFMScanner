@@ -32,36 +32,29 @@
     self.navigationItem.rightBarButtonItem = addButton;
     
     NSURL *url = [NSURL URLWithString:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetMostRecentCensus"];
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        //Parse Data
-        NSError *jsonError;
-        if (data)
-        {
-            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
-            _objects = [[NSMutableArray alloc] init];
-            
-            if (json) {
-                for (NSDictionary *jsonCourse in json){
-                    NSLog(@"This is a census: %@", [jsonCourse objectForKey:@"CensusNumber"]);
-                    Census *census = [[Census alloc]init];
-                    [census setCensusName:[jsonCourse objectForKey:@"CensusNumber"]];
-                    [census setCensusID:[jsonCourse objectForKey:@"CensusID"]];
-                    [_objects addObject:census];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+            //Parse Data
+            NSError *jsonError;
+            if (data)
+            {
+                NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+                dispatch_async(dispatch_get_main_queue(), ^{
                     
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [[self tableView] reloadData];
-                    });
-                }
+                _objects = [Census arrayOfModelsFromDictionaries:
+                            json];
+                    [[self tableView] reloadData];
+                    
+                });
             }
             else {
-                NSLog(@"An error occurred: %@", jsonError);
+                NSLog(@"Unable to connect to webservice");
             }
-        }
-        else {
-            NSLog(@"Unable to connect to webservice");
-        }
-    }];
+        }];
+    });
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,9 +88,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    
+    Census* cen = _objects[indexPath.row];
+    cell.textLabel.text = cen.CensusNumber;
     return cell;
 }
 
@@ -137,7 +130,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSString *object = _objects[indexPath.row];
+        Census *object = _objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }

@@ -24,6 +24,20 @@
 		189E686A18C7FB8A00FBD2C2 /* AFMScannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 189E686918C7FB8A00FBD2C2 /* AFMScannerTests.m */; };
 		189E687518C808AE00FBD2C2 /* Census.m in Sources */ = {isa = PBXBuildFile; fileRef = 189E687418C808AE00FBD2C2 /* Census.m */; };
 		18E5D47518CB9C48007E0238 /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D47418CB9C48007E0238 /* ScannerViewController.m */; };
+		18E5D47918CBDDB4007E0238 /* CensusParentLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D47818CBDDB4007E0238 /* CensusParentLocation.m */; };
+		18E5D47C18CBDF06007E0238 /* CensusChildLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D47B18CBDF06007E0238 /* CensusChildLocation.m */; };
+		18E5D49918CBE80F007E0238 /* JSONModel+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D48018CBE80F007E0238 /* JSONModel+CoreData.m */; };
+		18E5D49A18CBE80F007E0238 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D48218CBE80F007E0238 /* JSONModel.m */; };
+		18E5D49B18CBE80F007E0238 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D48418CBE80F007E0238 /* JSONModelArray.m */; };
+		18E5D49C18CBE80F007E0238 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D48618CBE80F007E0238 /* JSONModelClassProperty.m */; };
+		18E5D49D18CBE80F007E0238 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D48818CBE80F007E0238 /* JSONModelError.m */; };
+		18E5D49E18CBE80F007E0238 /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D48B18CBE80F007E0238 /* NSArray+JSONModel.m */; };
+		18E5D49F18CBE80F007E0238 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D48F18CBE80F007E0238 /* JSONAPI.m */; };
+		18E5D4A018CBE80F007E0238 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D49118CBE80F007E0238 /* JSONHTTPClient.m */; };
+		18E5D4A118CBE80F007E0238 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D49318CBE80F007E0238 /* JSONModel+networking.m */; };
+		18E5D4A218CBE80F007E0238 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D49618CBE80F007E0238 /* JSONKeyMapper.m */; };
+		18E5D4A318CBE80F007E0238 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D49818CBE80F007E0238 /* JSONValueTransformer.m */; };
+		18E5D4A518CBE87A007E0238 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E5D4A418CBE87A007E0238 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +76,34 @@
 		189E687418C808AE00FBD2C2 /* Census.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Census.m; sourceTree = "<group>"; };
 		18E5D47318CB9C48007E0238 /* ScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
 		18E5D47418CB9C48007E0238 /* ScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
+		18E5D47718CBDDB4007E0238 /* CensusParentLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CensusParentLocation.h; sourceTree = "<group>"; };
+		18E5D47818CBDDB4007E0238 /* CensusParentLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CensusParentLocation.m; sourceTree = "<group>"; };
+		18E5D47A18CBDF06007E0238 /* CensusChildLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CensusChildLocation.h; sourceTree = "<group>"; };
+		18E5D47B18CBDF06007E0238 /* CensusChildLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CensusChildLocation.m; sourceTree = "<group>"; };
+		18E5D47F18CBE80F007E0238 /* JSONModel+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+CoreData.h"; sourceTree = "<group>"; };
+		18E5D48018CBE80F007E0238 /* JSONModel+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+CoreData.m"; sourceTree = "<group>"; };
+		18E5D48118CBE80F007E0238 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		18E5D48218CBE80F007E0238 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		18E5D48318CBE80F007E0238 /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
+		18E5D48418CBE80F007E0238 /* JSONModelArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelArray.m; sourceTree = "<group>"; };
+		18E5D48518CBE80F007E0238 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
+		18E5D48618CBE80F007E0238 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
+		18E5D48718CBE80F007E0238 /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
+		18E5D48818CBE80F007E0238 /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
+		18E5D48A18CBE80F007E0238 /* NSArray+JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSONModel.h"; sourceTree = "<group>"; };
+		18E5D48B18CBE80F007E0238 /* NSArray+JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSONModel.m"; sourceTree = "<group>"; };
+		18E5D48C18CBE80F007E0238 /* JSONModelLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelLib.h; sourceTree = "<group>"; };
+		18E5D48E18CBE80F007E0238 /* JSONAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
+		18E5D48F18CBE80F007E0238 /* JSONAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONAPI.m; sourceTree = "<group>"; };
+		18E5D49018CBE80F007E0238 /* JSONHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHTTPClient.h; sourceTree = "<group>"; };
+		18E5D49118CBE80F007E0238 /* JSONHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHTTPClient.m; sourceTree = "<group>"; };
+		18E5D49218CBE80F007E0238 /* JSONModel+networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+networking.h"; sourceTree = "<group>"; };
+		18E5D49318CBE80F007E0238 /* JSONModel+networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+networking.m"; sourceTree = "<group>"; };
+		18E5D49518CBE80F007E0238 /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
+		18E5D49618CBE80F007E0238 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
+		18E5D49718CBE80F007E0238 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
+		18E5D49818CBE80F007E0238 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		18E5D4A418CBE87A007E0238 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E5D4A518CBE87A007E0238 /* SystemConfiguration.framework in Frameworks */,
 				189E683E18C7FB8900FBD2C2 /* CoreGraphics.framework in Frameworks */,
 				189E684018C7FB8A00FBD2C2 /* UIKit.framework in Frameworks */,
 				189E683C18C7FB8900FBD2C2 /* Foundation.framework in Frameworks */,
@@ -91,6 +134,7 @@
 		189E682F18C7FB8900FBD2C2 = {
 			isa = PBXGroup;
 			children = (
+				18E5D47D18CBE80F007E0238 /* JSONModel */,
 				189E684118C7FB8A00FBD2C2 /* AFMScanner */,
 				189E686318C7FB8A00FBD2C2 /* AFMScannerTests */,
 				189E683A18C7FB8900FBD2C2 /* Frameworks */,
@@ -110,6 +154,7 @@
 		189E683A18C7FB8900FBD2C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18E5D4A418CBE87A007E0238 /* SystemConfiguration.framework */,
 				189E683B18C7FB8900FBD2C2 /* Foundation.framework */,
 				189E683D18C7FB8900FBD2C2 /* CoreGraphics.framework */,
 				189E683F18C7FB8A00FBD2C2 /* UIKit.framework */,
@@ -121,6 +166,7 @@
 		189E684118C7FB8A00FBD2C2 /* AFMScanner */ = {
 			isa = PBXGroup;
 			children = (
+				18E5D47618CBCD14007E0238 /* Census Model */,
 				189E684A18C7FB8A00FBD2C2 /* AppDelegate.h */,
 				189E684B18C7FB8A00FBD2C2 /* AppDelegate.m */,
 				189E684D18C7FB8A00FBD2C2 /* Main.storyboard */,
@@ -129,11 +175,9 @@
 				189E685318C7FB8A00FBD2C2 /* DetailViewController.h */,
 				189E685418C7FB8A00FBD2C2 /* DetailViewController.m */,
 				189E685618C7FB8A00FBD2C2 /* Images.xcassets */,
-				189E684218C7FB8A00FBD2C2 /* Supporting Files */,
-				189E687318C808AE00FBD2C2 /* Census.h */,
-				189E687418C808AE00FBD2C2 /* Census.m */,
 				18E5D47318CB9C48007E0238 /* ScannerViewController.h */,
 				18E5D47418CB9C48007E0238 /* ScannerViewController.m */,
+				189E684218C7FB8A00FBD2C2 /* Supporting Files */,
 			);
 			path = AFMScanner;
 			sourceTree = "<group>";
@@ -165,6 +209,82 @@
 				189E686618C7FB8A00FBD2C2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18E5D47618CBCD14007E0238 /* Census Model */ = {
+			isa = PBXGroup;
+			children = (
+				189E687318C808AE00FBD2C2 /* Census.h */,
+				189E687418C808AE00FBD2C2 /* Census.m */,
+				18E5D47718CBDDB4007E0238 /* CensusParentLocation.h */,
+				18E5D47818CBDDB4007E0238 /* CensusParentLocation.m */,
+				18E5D47A18CBDF06007E0238 /* CensusChildLocation.h */,
+				18E5D47B18CBDF06007E0238 /* CensusChildLocation.m */,
+			);
+			name = "Census Model";
+			sourceTree = "<group>";
+		};
+		18E5D47D18CBE80F007E0238 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				18E5D47E18CBE80F007E0238 /* JSONModel */,
+				18E5D48918CBE80F007E0238 /* JSONModelCategories */,
+				18E5D48C18CBE80F007E0238 /* JSONModelLib.h */,
+				18E5D48D18CBE80F007E0238 /* JSONModelNetworking */,
+				18E5D49418CBE80F007E0238 /* JSONModelTransformations */,
+			);
+			name = JSONModel;
+			path = AFMScanner/JSONModel/JSONModel;
+			sourceTree = "<group>";
+		};
+		18E5D47E18CBE80F007E0238 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				18E5D47F18CBE80F007E0238 /* JSONModel+CoreData.h */,
+				18E5D48018CBE80F007E0238 /* JSONModel+CoreData.m */,
+				18E5D48118CBE80F007E0238 /* JSONModel.h */,
+				18E5D48218CBE80F007E0238 /* JSONModel.m */,
+				18E5D48318CBE80F007E0238 /* JSONModelArray.h */,
+				18E5D48418CBE80F007E0238 /* JSONModelArray.m */,
+				18E5D48518CBE80F007E0238 /* JSONModelClassProperty.h */,
+				18E5D48618CBE80F007E0238 /* JSONModelClassProperty.m */,
+				18E5D48718CBE80F007E0238 /* JSONModelError.h */,
+				18E5D48818CBE80F007E0238 /* JSONModelError.m */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		18E5D48918CBE80F007E0238 /* JSONModelCategories */ = {
+			isa = PBXGroup;
+			children = (
+				18E5D48A18CBE80F007E0238 /* NSArray+JSONModel.h */,
+				18E5D48B18CBE80F007E0238 /* NSArray+JSONModel.m */,
+			);
+			path = JSONModelCategories;
+			sourceTree = "<group>";
+		};
+		18E5D48D18CBE80F007E0238 /* JSONModelNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				18E5D48E18CBE80F007E0238 /* JSONAPI.h */,
+				18E5D48F18CBE80F007E0238 /* JSONAPI.m */,
+				18E5D49018CBE80F007E0238 /* JSONHTTPClient.h */,
+				18E5D49118CBE80F007E0238 /* JSONHTTPClient.m */,
+				18E5D49218CBE80F007E0238 /* JSONModel+networking.h */,
+				18E5D49318CBE80F007E0238 /* JSONModel+networking.m */,
+			);
+			path = JSONModelNetworking;
+			sourceTree = "<group>";
+		};
+		18E5D49418CBE80F007E0238 /* JSONModelTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				18E5D49518CBE80F007E0238 /* JSONKeyMapper.h */,
+				18E5D49618CBE80F007E0238 /* JSONKeyMapper.m */,
+				18E5D49718CBE80F007E0238 /* JSONValueTransformer.h */,
+				18E5D49818CBE80F007E0238 /* JSONValueTransformer.m */,
+			);
+			path = JSONModelTransformations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,10 +389,23 @@
 			files = (
 				189E684C18C7FB8A00FBD2C2 /* AppDelegate.m in Sources */,
 				18E5D47518CB9C48007E0238 /* ScannerViewController.m in Sources */,
+				18E5D4A118CBE80F007E0238 /* JSONModel+networking.m in Sources */,
 				189E685218C7FB8A00FBD2C2 /* MasterViewController.m in Sources */,
+				18E5D47918CBDDB4007E0238 /* CensusParentLocation.m in Sources */,
+				18E5D4A018CBE80F007E0238 /* JSONHTTPClient.m in Sources */,
 				189E684818C7FB8A00FBD2C2 /* main.m in Sources */,
+				18E5D49C18CBE80F007E0238 /* JSONModelClassProperty.m in Sources */,
+				18E5D4A318CBE80F007E0238 /* JSONValueTransformer.m in Sources */,
+				18E5D49918CBE80F007E0238 /* JSONModel+CoreData.m in Sources */,
 				189E687518C808AE00FBD2C2 /* Census.m in Sources */,
+				18E5D49F18CBE80F007E0238 /* JSONAPI.m in Sources */,
+				18E5D49E18CBE80F007E0238 /* NSArray+JSONModel.m in Sources */,
+				18E5D4A218CBE80F007E0238 /* JSONKeyMapper.m in Sources */,
+				18E5D47C18CBDF06007E0238 /* CensusChildLocation.m in Sources */,
 				189E685518C7FB8A00FBD2C2 /* DetailViewController.m in Sources */,
+				18E5D49D18CBE80F007E0238 /* JSONModelError.m in Sources */,
+				18E5D49A18CBE80F007E0238 /* JSONModel.m in Sources */,
+				18E5D49B18CBE80F007E0238 /* JSONModelArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

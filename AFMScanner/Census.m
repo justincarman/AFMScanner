@@ -10,8 +10,4 @@
 
 @implementation Census
 
--(NSString*) description{
-    return [NSString stringWithString:[self CensusName]];
-}
-
 @end

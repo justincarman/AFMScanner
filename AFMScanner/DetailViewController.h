@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Census.h"
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) NSObject *detailItem;
+@property (strong, nonatomic) Census *detailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
