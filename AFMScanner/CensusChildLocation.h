@@ -6,8 +6,14 @@
 //  Copyright (c) 2014 Justin Carman. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "JSONModel.h"
+@protocol CensusChildLocation @end
+@interface CensusChildLocation : JSONModel
 
-@interface CensusChildLocation : NSObject
+@property (nonatomic, strong) NSString *CensusID;
+@property (nonatomic, strong) NSString *ChildLocationID;
+@property (nonatomic, strong) NSString *ChildLocationCode;
+@property (nonatomic, strong) NSString *ChildLocationName;
+@property (nonatomic, strong) NSString *ChildLocationLongName;
 
 @end

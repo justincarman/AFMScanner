@@ -10,9 +10,10 @@
 #import "JSONModel.h"
 @interface CensusParentLocation : JSONModel
 
+@property (nonatomic, strong) NSString *CensusID;
 @property (nonatomic, strong) NSString *ParentLocationID;
 @property (nonatomic, strong) NSString *ParentLocationCode;
 @property (nonatomic, strong) NSString *ParentLocationName;
-@property (nonatomic, strong) NSDictionary *CensusChildLocations;
+@property (nonatomic, strong) NSArray<CensusChildLocation> *CensusChildLocations;
 
 @end

@@ -1,37 +1,34 @@
 //
-//  MasterViewController.m
+//  EnclosuresViewController.m
 //  AFMScanner
 //
-//  Created by Justin Carman on 3/5/14.
+//  Created by Justin Carman on 3/9/14.
 //  Copyright (c) 2014 Justin Carman. All rights reserved.
 //
 
-#import "MasterViewController.h"
-#import "DetailViewController.h"
-#import "Census.h"
-
-@interface MasterViewController () {
+#import "EnclosuresViewController.h"
+#import "ProtocolEnclosure.h"
+@interface EnclosuresViewController (){
     NSMutableArray *_objects;
 }
+
 @end
 
-@implementation MasterViewController
+@implementation EnclosuresViewController
 
-- (void)awakeFromNib
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    [super awakeFromNib];
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
-    
-    NSURL *url = [NSURL URLWithString:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetMostRecentCensus"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetEnclosures&CensusID=%@&LocationID=%@", self.enclosureDetailItem.CensusID, self.enclosureDetailItem.ChildLocationID]];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
@@ -44,8 +41,8 @@
                 NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
-                _objects = [Census arrayOfModelsFromDictionaries:
-                            json];
+                    _objects = [ProtocolEnclosure arrayOfModelsFromDictionaries:
+                                json];
                     [[self tableView] reloadData];
                     
                 });
@@ -63,52 +60,58 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-
-#pragma mark - Table View
+#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    // Return the number of sections.
+    return _objects.count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    ProtocolEnclosure *enc = (ProtocolEnclosure *) _objects[section];
+    return enc.ProtocolNumber;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    ProtocolEnclosure *enc = (ProtocolEnclosure *) _objects[section];
+    return enc.Enclosures.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
-    Census* cen = _objects[indexPath.row];
-    cell.textLabel.text = cen.CensusNumber;
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    ProtocolEnclosure *loc = (ProtocolEnclosure *)_objects[indexPath.section];
+    Enclosure *enc = (Enclosure *) loc.Enclosures[indexPath.row];
+    cell.textLabel.text = enc.EnclosureNumber;
     return cell;
 }
 
+/*
+// Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return NO;
+    return YES;
 }
+*/
 
+/*
+// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
+        // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
+    }   
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
 }
+*/
 
 /*
 // Override to support rearranging the table view.
@@ -126,13 +129,16 @@
 }
 */
 
+/*
+#pragma mark - Navigation
+
+// In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Census *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
-    }
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+
+ */
 
 @end

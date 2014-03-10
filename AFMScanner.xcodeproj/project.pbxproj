@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1842E0FB18CD12CA0014C39A /* LocationListParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842E0FA18CD12CA0014C39A /* LocationListParentViewController.m */; };
 		189E683C18C7FB8900FBD2C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189E683B18C7FB8900FBD2C2 /* Foundation.framework */; };
 		189E683E18C7FB8900FBD2C2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189E683D18C7FB8900FBD2C2 /* CoreGraphics.framework */; };
 		189E684018C7FB8A00FBD2C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189E683F18C7FB8A00FBD2C2 /* UIKit.framework */; };
@@ -23,6 +24,10 @@
 		189E686818C7FB8A00FBD2C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 189E686618C7FB8A00FBD2C2 /* InfoPlist.strings */; };
 		189E686A18C7FB8A00FBD2C2 /* AFMScannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 189E686918C7FB8A00FBD2C2 /* AFMScannerTests.m */; };
 		189E687518C808AE00FBD2C2 /* Census.m in Sources */ = {isa = PBXBuildFile; fileRef = 189E687418C808AE00FBD2C2 /* Census.m */; };
+		18CDA9A818CD26FE006ED8E7 /* LocationListChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDA9A718CD26FE006ED8E7 /* LocationListChildViewController.m */; };
+		18CDA9AB18CD6393006ED8E7 /* ProtocolEnclosure.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDA9AA18CD6393006ED8E7 /* ProtocolEnclosure.m */; };
+		18CDA9AE18CD63A0006ED8E7 /* Enclosure.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDA9AD18CD63A0006ED8E7 /* Enclosure.m */; };
+		18CDA9B118CD6624006ED8E7 /* EnclosuresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDA9B018CD6624006ED8E7 /* EnclosuresViewController.m */; };
 		18E5D47518CB9C48007E0238 /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D47418CB9C48007E0238 /* ScannerViewController.m */; };
 		18E5D47918CBDDB4007E0238 /* CensusParentLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D47818CBDDB4007E0238 /* CensusParentLocation.m */; };
 		18E5D47C18CBDF06007E0238 /* CensusChildLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D47B18CBDF06007E0238 /* CensusChildLocation.m */; };
@@ -51,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1842E0F918CD12CA0014C39A /* LocationListParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationListParentViewController.h; sourceTree = "<group>"; };
+		1842E0FA18CD12CA0014C39A /* LocationListParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationListParentViewController.m; sourceTree = "<group>"; };
 		189E683818C7FB8900FBD2C2 /* AFMScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFMScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189E683B18C7FB8900FBD2C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		189E683D18C7FB8900FBD2C2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -74,6 +81,14 @@
 		189E686918C7FB8A00FBD2C2 /* AFMScannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFMScannerTests.m; sourceTree = "<group>"; };
 		189E687318C808AE00FBD2C2 /* Census.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Census.h; sourceTree = "<group>"; };
 		189E687418C808AE00FBD2C2 /* Census.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Census.m; sourceTree = "<group>"; };
+		18CDA9A618CD26FE006ED8E7 /* LocationListChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationListChildViewController.h; sourceTree = "<group>"; };
+		18CDA9A718CD26FE006ED8E7 /* LocationListChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationListChildViewController.m; sourceTree = "<group>"; };
+		18CDA9A918CD6393006ED8E7 /* ProtocolEnclosure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolEnclosure.h; sourceTree = "<group>"; };
+		18CDA9AA18CD6393006ED8E7 /* ProtocolEnclosure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolEnclosure.m; sourceTree = "<group>"; };
+		18CDA9AC18CD63A0006ED8E7 /* Enclosure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enclosure.h; sourceTree = "<group>"; };
+		18CDA9AD18CD63A0006ED8E7 /* Enclosure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enclosure.m; sourceTree = "<group>"; };
+		18CDA9AF18CD6624006ED8E7 /* EnclosuresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnclosuresViewController.h; sourceTree = "<group>"; };
+		18CDA9B018CD6624006ED8E7 /* EnclosuresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnclosuresViewController.m; sourceTree = "<group>"; };
 		18E5D47318CB9C48007E0238 /* ScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
 		18E5D47418CB9C48007E0238 /* ScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
 		18E5D47718CBDDB4007E0238 /* CensusParentLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CensusParentLocation.h; sourceTree = "<group>"; };
@@ -131,6 +146,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		188940B918CD0C6000A5EA9E /* Census List View */ = {
+			isa = PBXGroup;
+			children = (
+				189E685018C7FB8A00FBD2C2 /* MasterViewController.h */,
+				189E685118C7FB8A00FBD2C2 /* MasterViewController.m */,
+			);
+			name = "Census List View";
+			sourceTree = "<group>";
+		};
+		188940BA18CD0C8B00A5EA9E /* Census Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				189E685318C7FB8A00FBD2C2 /* DetailViewController.h */,
+				189E685418C7FB8A00FBD2C2 /* DetailViewController.m */,
+			);
+			name = "Census Detail View";
+			sourceTree = "<group>";
+		};
+		188940BB18CD0CD200A5EA9E /* Scanner View */ = {
+			isa = PBXGroup;
+			children = (
+				18E5D47318CB9C48007E0238 /* ScannerViewController.h */,
+				18E5D47418CB9C48007E0238 /* ScannerViewController.m */,
+			);
+			name = "Scanner View";
+			sourceTree = "<group>";
+		};
+		188940BC18CD0D5200A5EA9E /* Locations Parent View */ = {
+			isa = PBXGroup;
+			children = (
+				1842E0F918CD12CA0014C39A /* LocationListParentViewController.h */,
+				1842E0FA18CD12CA0014C39A /* LocationListParentViewController.m */,
+			);
+			name = "Locations Parent View";
+			sourceTree = "<group>";
+		};
 		189E682F18C7FB8900FBD2C2 = {
 			isa = PBXGroup;
 			children = (
@@ -167,16 +218,16 @@
 			isa = PBXGroup;
 			children = (
 				18E5D47618CBCD14007E0238 /* Census Model */,
+				188940B918CD0C6000A5EA9E /* Census List View */,
+				188940BA18CD0C8B00A5EA9E /* Census Detail View */,
+				188940BB18CD0CD200A5EA9E /* Scanner View */,
+				188940BC18CD0D5200A5EA9E /* Locations Parent View */,
+				18CDA9A518CD26B3006ED8E7 /* Locations Child View */,
+				18CDA9B218CD6649006ED8E7 /* Enclosures View */,
 				189E684A18C7FB8A00FBD2C2 /* AppDelegate.h */,
 				189E684B18C7FB8A00FBD2C2 /* AppDelegate.m */,
 				189E684D18C7FB8A00FBD2C2 /* Main.storyboard */,
-				189E685018C7FB8A00FBD2C2 /* MasterViewController.h */,
-				189E685118C7FB8A00FBD2C2 /* MasterViewController.m */,
-				189E685318C7FB8A00FBD2C2 /* DetailViewController.h */,
-				189E685418C7FB8A00FBD2C2 /* DetailViewController.m */,
 				189E685618C7FB8A00FBD2C2 /* Images.xcassets */,
-				18E5D47318CB9C48007E0238 /* ScannerViewController.h */,
-				18E5D47418CB9C48007E0238 /* ScannerViewController.m */,
 				189E684218C7FB8A00FBD2C2 /* Supporting Files */,
 			);
 			path = AFMScanner;
@@ -211,6 +262,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		18CDA9A518CD26B3006ED8E7 /* Locations Child View */ = {
+			isa = PBXGroup;
+			children = (
+				18CDA9A618CD26FE006ED8E7 /* LocationListChildViewController.h */,
+				18CDA9A718CD26FE006ED8E7 /* LocationListChildViewController.m */,
+			);
+			name = "Locations Child View";
+			sourceTree = "<group>";
+		};
+		18CDA9B218CD6649006ED8E7 /* Enclosures View */ = {
+			isa = PBXGroup;
+			children = (
+				18CDA9AF18CD6624006ED8E7 /* EnclosuresViewController.h */,
+				18CDA9B018CD6624006ED8E7 /* EnclosuresViewController.m */,
+			);
+			name = "Enclosures View";
+			sourceTree = "<group>";
+		};
 		18E5D47618CBCD14007E0238 /* Census Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +289,10 @@
 				18E5D47818CBDDB4007E0238 /* CensusParentLocation.m */,
 				18E5D47A18CBDF06007E0238 /* CensusChildLocation.h */,
 				18E5D47B18CBDF06007E0238 /* CensusChildLocation.m */,
+				18CDA9A918CD6393006ED8E7 /* ProtocolEnclosure.h */,
+				18CDA9AA18CD6393006ED8E7 /* ProtocolEnclosure.m */,
+				18CDA9AC18CD63A0006ED8E7 /* Enclosure.h */,
+				18CDA9AD18CD63A0006ED8E7 /* Enclosure.m */,
 			);
 			name = "Census Model";
 			sourceTree = "<group>";
@@ -390,6 +463,7 @@
 				189E684C18C7FB8A00FBD2C2 /* AppDelegate.m in Sources */,
 				18E5D47518CB9C48007E0238 /* ScannerViewController.m in Sources */,
 				18E5D4A118CBE80F007E0238 /* JSONModel+networking.m in Sources */,
+				1842E0FB18CD12CA0014C39A /* LocationListParentViewController.m in Sources */,
 				189E685218C7FB8A00FBD2C2 /* MasterViewController.m in Sources */,
 				18E5D47918CBDDB4007E0238 /* CensusParentLocation.m in Sources */,
 				18E5D4A018CBE80F007E0238 /* JSONHTTPClient.m in Sources */,
@@ -400,10 +474,14 @@
 				189E687518C808AE00FBD2C2 /* Census.m in Sources */,
 				18E5D49F18CBE80F007E0238 /* JSONAPI.m in Sources */,
 				18E5D49E18CBE80F007E0238 /* NSArray+JSONModel.m in Sources */,
+				18CDA9AB18CD6393006ED8E7 /* ProtocolEnclosure.m in Sources */,
+				18CDA9B118CD6624006ED8E7 /* EnclosuresViewController.m in Sources */,
 				18E5D4A218CBE80F007E0238 /* JSONKeyMapper.m in Sources */,
 				18E5D47C18CBDF06007E0238 /* CensusChildLocation.m in Sources */,
+				18CDA9AE18CD63A0006ED8E7 /* Enclosure.m in Sources */,
 				189E685518C7FB8A00FBD2C2 /* DetailViewController.m in Sources */,
 				18E5D49D18CBE80F007E0238 /* JSONModelError.m in Sources */,
+				18CDA9A818CD26FE006ED8E7 /* LocationListChildViewController.m in Sources */,
 				18E5D49A18CBE80F007E0238 /* JSONModel.m in Sources */,
 				18E5D49B18CBE80F007E0238 /* JSONModelArray.m in Sources */,
 			);

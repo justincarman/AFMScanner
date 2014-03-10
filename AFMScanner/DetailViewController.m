@@ -9,7 +9,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "DetailViewController.h"
 #import "ScannerViewController.h"
-
+#import "LocationListParentViewController.h"
 @interface DetailViewController () <AVCaptureMetadataOutputObjectsDelegate>
 {
 }
@@ -36,9 +36,22 @@
     self.detailDescriptionLabel.text = scanner.barCodeScanned;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"PushToParentLocations"]) {
+        Census *object = self.detailItem;
+        [[segue destinationViewController] setLocationListParentDetailItem:object];
+    }
+}
+
 -(IBAction)scanButtonClick:(id)sender
 {
-    NSLog(@"Button clicked");
+    NSLog(@"Scan button clicked");
+}
+
+- (IBAction)viewCensusLocationsClick:(id)sender
+{
+    NSLog(@"View locations button clicked");
 }
 
 - (void)configureView
