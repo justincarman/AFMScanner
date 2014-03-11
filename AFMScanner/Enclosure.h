@@ -13,7 +13,7 @@
 @property (nonatomic, strong) NSString *EnclosureNumber;
 @property (nonatomic, strong) NSString *InventoryID;
 @property (nonatomic, strong) NSString *UseInventoryID;
-@property (nonatomic, strong) NSString *CensusQTY;
+@property (nonatomic) int CensusQTY;
 @property (nonatomic) BOOL MissingEnclosure;
 @property (nonatomic) BOOL RetireEnclosure;
 @end

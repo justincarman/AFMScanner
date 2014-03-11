@@ -87,6 +87,7 @@
     ProtocolEnclosure *loc = (ProtocolEnclosure *)_objects[indexPath.section];
     Enclosure *enc = (Enclosure *) loc.Enclosures[indexPath.row];
     cell.textLabel.text = enc.EnclosureNumber;
+    cell.detailTextLabel.text =[NSString stringWithFormat:@"Current Census Count: %d", enc.CensusQTY];
     return cell;
 }
 
