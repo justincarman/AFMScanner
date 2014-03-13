@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1842E0FB18CD12CA0014C39A /* LocationListParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842E0FA18CD12CA0014C39A /* LocationListParentViewController.m */; };
+		1880A02C18D0E232008C8776 /* EnclosureDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880A02B18D0E232008C8776 /* EnclosureDetailCell.m */; };
 		189E683C18C7FB8900FBD2C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189E683B18C7FB8900FBD2C2 /* Foundation.framework */; };
 		189E683E18C7FB8900FBD2C2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189E683D18C7FB8900FBD2C2 /* CoreGraphics.framework */; };
 		189E684018C7FB8A00FBD2C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189E683F18C7FB8A00FBD2C2 /* UIKit.framework */; };
@@ -58,6 +59,8 @@
 /* Begin PBXFileReference section */
 		1842E0F918CD12CA0014C39A /* LocationListParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationListParentViewController.h; sourceTree = "<group>"; };
 		1842E0FA18CD12CA0014C39A /* LocationListParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationListParentViewController.m; sourceTree = "<group>"; };
+		1880A02A18D0E232008C8776 /* EnclosureDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnclosureDetailCell.h; sourceTree = "<group>"; };
+		1880A02B18D0E232008C8776 /* EnclosureDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnclosureDetailCell.m; sourceTree = "<group>"; };
 		189E683818C7FB8900FBD2C2 /* AFMScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFMScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189E683B18C7FB8900FBD2C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		189E683D18C7FB8900FBD2C2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -146,6 +149,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1880A02918D0E1E4008C8776 /* Custom Objects */ = {
+			isa = PBXGroup;
+			children = (
+				1880A02A18D0E232008C8776 /* EnclosureDetailCell.h */,
+				1880A02B18D0E232008C8776 /* EnclosureDetailCell.m */,
+			);
+			name = "Custom Objects";
+			sourceTree = "<group>";
+		};
 		188940B918CD0C6000A5EA9E /* Census List View */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +229,7 @@
 		189E684118C7FB8A00FBD2C2 /* AFMScanner */ = {
 			isa = PBXGroup;
 			children = (
+				1880A02918D0E1E4008C8776 /* Custom Objects */,
 				18E5D47618CBCD14007E0238 /* Census Model */,
 				188940B918CD0C6000A5EA9E /* Census List View */,
 				188940BA18CD0C8B00A5EA9E /* Census Detail View */,
@@ -467,6 +480,7 @@
 				189E685218C7FB8A00FBD2C2 /* MasterViewController.m in Sources */,
 				18E5D47918CBDDB4007E0238 /* CensusParentLocation.m in Sources */,
 				18E5D4A018CBE80F007E0238 /* JSONHTTPClient.m in Sources */,
+				1880A02C18D0E232008C8776 /* EnclosureDetailCell.m in Sources */,
 				189E684818C7FB8A00FBD2C2 /* main.m in Sources */,
 				18E5D49C18CBE80F007E0238 /* JSONModelClassProperty.m in Sources */,
 				18E5D4A318CBE80F007E0238 /* JSONValueTransformer.m in Sources */,

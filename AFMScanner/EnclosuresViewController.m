@@ -8,6 +8,7 @@
 
 #import "EnclosuresViewController.h"
 #import "ProtocolEnclosure.h"
+#import "EnclosureDetailCell.h"
 @interface EnclosuresViewController (){
     NSMutableArray *_objects;
 }
@@ -52,6 +53,10 @@
             }
         }];
     });
+    
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    gestureRecognizer.cancelsTouchesInView = NO;
+    [self.tableView addGestureRecognizer:gestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,12 +88,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    EnclosureDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     ProtocolEnclosure *loc = (ProtocolEnclosure *)_objects[indexPath.section];
     Enclosure *enc = (Enclosure *) loc.Enclosures[indexPath.row];
-    cell.textLabel.text = enc.EnclosureNumber;
-    cell.detailTextLabel.text =[NSString stringWithFormat:@"Current Census Count: %d", enc.CensusQTY];
+    cell.enclosureNumber.text = enc.EnclosureNumber;
+    cell.QTY.text =[NSString stringWithFormat:@"%i", enc.CensusQTY];
+    cell.stepper.value = enc.CensusQTY;
     return cell;
+}
+
+- (void)dismissKeyboard {
+    [self.view endEditing:YES];
 }
 
 /*
