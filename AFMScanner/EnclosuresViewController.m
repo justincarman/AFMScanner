@@ -29,7 +29,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetEnclosures&CensusID=%@&LocationID=%@", self.enclosureDetailItem.CensusID, self.enclosureDetailItem.ChildLocationID]];
+    NSURL *url;
+    if (self.enclosureDetailItem != nil)
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetEnclosures&CensusID=%@&LocationID=%@", self.enclosureDetailItem.CensusID, self.enclosureDetailItem.ChildLocationID]];
+    else
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetEnclosure&CensusID=%@&EnclosureNumber=%@", self.censusID, self.scannedEnclosureNumber]];
+        
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
@@ -94,6 +99,19 @@
     cell.enclosureNumber.text = enc.EnclosureNumber;
     cell.QTY.text =[NSString stringWithFormat:@"%i", enc.CensusQTY];
     cell.stepper.value = enc.CensusQTY;
+    if (enc.Verified)
+    {
+        cell.QTY.enabled = false;
+        cell.stepper.enabled = false;
+        cell.enclosureStatus.selectedSegmentIndex = Verified;
+    }
+    else if (enc.MissingEnclosure)
+        cell.enclosureStatus.selectedSegmentIndex = MissingEnclosure;
+    else if (enc.RetireEnclosure)
+        cell.enclosureStatus.selectedSegmentIndex = RetireEnclosure;
+    else
+        cell.enclosureStatus.selectedSegmentIndex = None;
+    
     return cell;
 }
 
@@ -101,6 +119,18 @@
     [self.view endEditing:YES];
 }
 
+enum{
+    Verified = 0,
+    MissingEnclosure = 1,
+    RetireEnclosure = 2,
+    None = -1
+};
+typedef NSInteger EnclosureStatus;
+
+- (void) tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+{
+    view.tintColor = [[UIColor alloc] initWithRed:20.0 / 255 green:59.0 / 255 blue:102.0 / 255 alpha:.75];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

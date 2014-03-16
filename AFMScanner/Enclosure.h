@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *InventoryID;
 @property (nonatomic, strong) NSString *UseInventoryID;
 @property (nonatomic) int CensusQTY;
+@property (nonatomic) BOOL Verified;
 @property (nonatomic) BOOL MissingEnclosure;
 @property (nonatomic) BOOL RetireEnclosure;
 @end

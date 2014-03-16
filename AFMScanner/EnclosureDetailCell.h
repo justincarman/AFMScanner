@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DeSelectableSegmentControl.h"
 
 @interface EnclosureDetailCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *enclosureNumber;
 @property (weak, nonatomic) IBOutlet UITextField *QTY;
 @property (weak, nonatomic) IBOutlet UIStepper *stepper;
+@property (weak, nonatomic) IBOutlet DeSelectableSegmentControl *enclosureStatus;
 
 - (IBAction)valueChanged:(UIStepper *)sender;
 - (IBAction)changedTextValue:(id)sender;

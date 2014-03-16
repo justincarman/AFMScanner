@@ -10,8 +10,11 @@
 #import "DetailViewController.h"
 #import "ScannerViewController.h"
 #import "LocationListParentViewController.h"
+#import "EnclosuresViewController.h"
 @interface DetailViewController () <AVCaptureMetadataOutputObjectsDelegate>
 {
+    NSString *barCodeScanned;
+    BOOL goToEnclosure;
 }
 - (void)configureView;
 @end
@@ -33,7 +36,8 @@
 - (IBAction)unwindFromScanner:(UIStoryboardSegue *)fromScannerSegue
 {
     ScannerViewController *scanner = (ScannerViewController *)fromScannerSegue.sourceViewController;
-    self.detailDescriptionLabel.text = scanner.barCodeScanned;
+    barCodeScanned = scanner.barCodeScanned;
+    goToEnclosure = YES;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -41,6 +45,10 @@
     if ([[segue identifier] isEqualToString:@"PushToParentLocations"]) {
         Census *object = self.detailItem;
         [[segue destinationViewController] setLocationListParentDetailItem:object];
+    }
+    else if ([[segue identifier] isEqualToString:@"PushToEnclosure"]) {
+        [[segue destinationViewController] setScannedEnclosureNumber:barCodeScanned];
+        [[segue destinationViewController] setCensusID:_detailItem.CensusID];
     }
 }
 
@@ -58,7 +66,7 @@
 {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = self.detailItem.CensusNumber;
+        //self.detailDescriptionLabel.text = self.detailItem.CensusNumber;
     }
 }
 
@@ -75,4 +83,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (goToEnclosure)
+    {
+        goToEnclosure = NO;
+        [self performSegueWithIdentifier:@"PushToEnclosure" sender:self];
+    }
+}
 @end

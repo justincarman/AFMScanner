@@ -12,9 +12,6 @@
 
 @property (strong, nonatomic) Census *detailItem;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
-
 - (IBAction)scanButtonClick:(id)sender;
 - (IBAction)viewCensusLocationsClick:(id)sender;
-
 @end

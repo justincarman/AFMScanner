@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1842E0FB18CD12CA0014C39A /* LocationListParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842E0FA18CD12CA0014C39A /* LocationListParentViewController.m */; };
 		1880A02C18D0E232008C8776 /* EnclosureDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880A02B18D0E232008C8776 /* EnclosureDetailCell.m */; };
+		1880F39218D28504005C1224 /* DeSelectableSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880F39118D28504005C1224 /* DeSelectableSegmentControl.m */; };
 		189E683C18C7FB8900FBD2C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189E683B18C7FB8900FBD2C2 /* Foundation.framework */; };
 		189E683E18C7FB8900FBD2C2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189E683D18C7FB8900FBD2C2 /* CoreGraphics.framework */; };
 		189E684018C7FB8A00FBD2C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189E683F18C7FB8A00FBD2C2 /* UIKit.framework */; };
@@ -61,6 +62,8 @@
 		1842E0FA18CD12CA0014C39A /* LocationListParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationListParentViewController.m; sourceTree = "<group>"; };
 		1880A02A18D0E232008C8776 /* EnclosureDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnclosureDetailCell.h; sourceTree = "<group>"; };
 		1880A02B18D0E232008C8776 /* EnclosureDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnclosureDetailCell.m; sourceTree = "<group>"; };
+		1880F39018D28504005C1224 /* DeSelectableSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeSelectableSegmentControl.h; sourceTree = "<group>"; };
+		1880F39118D28504005C1224 /* DeSelectableSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeSelectableSegmentControl.m; sourceTree = "<group>"; };
 		189E683818C7FB8900FBD2C2 /* AFMScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFMScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189E683B18C7FB8900FBD2C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		189E683D18C7FB8900FBD2C2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -154,6 +157,8 @@
 			children = (
 				1880A02A18D0E232008C8776 /* EnclosureDetailCell.h */,
 				1880A02B18D0E232008C8776 /* EnclosureDetailCell.m */,
+				1880F39018D28504005C1224 /* DeSelectableSegmentControl.h */,
+				1880F39118D28504005C1224 /* DeSelectableSegmentControl.m */,
 			);
 			name = "Custom Objects";
 			sourceTree = "<group>";
@@ -479,6 +484,7 @@
 				1842E0FB18CD12CA0014C39A /* LocationListParentViewController.m in Sources */,
 				189E685218C7FB8A00FBD2C2 /* MasterViewController.m in Sources */,
 				18E5D47918CBDDB4007E0238 /* CensusParentLocation.m in Sources */,
+				1880F39218D28504005C1224 /* DeSelectableSegmentControl.m in Sources */,
 				18E5D4A018CBE80F007E0238 /* JSONHTTPClient.m in Sources */,
 				1880A02C18D0E232008C8776 /* EnclosureDetailCell.m in Sources */,
 				189E684818C7FB8A00FBD2C2 /* main.m in Sources */,
