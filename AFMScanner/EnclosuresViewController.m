@@ -9,6 +9,7 @@
 #import "EnclosuresViewController.h"
 #import "ProtocolEnclosure.h"
 #import "EnclosureDetailCell.h"
+#import "ProgressHUD.h"
 @interface EnclosuresViewController (){
     NSMutableArray *_objects;
 }
@@ -29,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [ProgressHUD show:@"Loading..."];
     NSURL *url;
     if (self.enclosureDetailItem != nil)
         url = [NSURL URLWithString:[NSString stringWithFormat:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetEnclosures&CensusID=%@&LocationID=%@", self.enclosureDetailItem.CensusID, self.enclosureDetailItem.ChildLocationID]];
@@ -49,11 +51,13 @@
                     
                     _objects = [ProtocolEnclosure arrayOfModelsFromDictionaries:
                                 json];
+                    [ProgressHUD dismiss];
                     [[self tableView] reloadData];
                     
                 });
             }
             else {
+                [ProgressHUD showError:@"Unable to connect." Interacton:NO];
                 NSLog(@"Unable to connect to webservice");
             }
         }];

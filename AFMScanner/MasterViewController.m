@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "Census.h"
+#import "ProgressHUD.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -25,12 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    //self.navigationItem.rightBarButtonItem = addButton;
-    
+    [ProgressHUD show:@"Loading..."];
     NSURL *url = [NSURL URLWithString:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetMostRecentCensus"];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -44,13 +40,15 @@
                 NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
-                _objects = [Census arrayOfModelsFromDictionaries:
+                    _objects = [Census arrayOfModelsFromDictionaries:
                             json];
+                    [ProgressHUD dismiss];
                     [[self tableView] reloadData];
                     
                 });
             }
             else {
+                [ProgressHUD showError:@"Unable to connect." Interacton:NO];
                 NSLog(@"Unable to connect to webservice");
             }
         }];

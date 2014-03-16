@@ -10,6 +10,7 @@
 #import "LocationListChildViewController.h"
 #import "CensusParentLocation.h"
 #import "CensusChildLocation.h"
+#import "ProgressHUD.h"
 
 @interface LocationListParentViewController () {
     NSMutableArray *_objects;
@@ -30,6 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [ProgressHUD show:@"Loading..."];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetCensusLocations&CensusID=%@", self.locationListParentDetailItem.CensusID]];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -45,11 +47,13 @@
                     
                     _objects = [CensusParentLocation arrayOfModelsFromDictionaries:
                                 json];
+                    [ProgressHUD dismiss];
                     [[self tableView] reloadData];
                     
                 });
             }
             else {
+                [ProgressHUD showError:@"Unable to connect." Interacton:NO];
                 NSLog(@"Unable to connect to webservice");
             }
         }];
