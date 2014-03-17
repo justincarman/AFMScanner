@@ -47,6 +47,7 @@
 		18E5D4A218CBE80F007E0238 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D49618CBE80F007E0238 /* JSONKeyMapper.m */; };
 		18E5D4A318CBE80F007E0238 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D49818CBE80F007E0238 /* JSONValueTransformer.m */; };
 		18E5D4A518CBE87A007E0238 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E5D4A418CBE87A007E0238 /* SystemConfiguration.framework */; };
+		18F359A818D6ABF60039639B /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F359A718D6ABF60039639B /* Splash.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		18E5D49718CBE80F007E0238 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		18E5D49818CBE80F007E0238 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
 		18E5D4A418CBE87A007E0238 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		18F359A718D6ABF60039639B /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				189E684318C7FB8A00FBD2C2 /* AFMScanner-Info.plist */,
+				18F359A718D6ABF60039639B /* Splash.png */,
 				189E684418C7FB8A00FBD2C2 /* InfoPlist.strings */,
 				189E684718C7FB8A00FBD2C2 /* main.m */,
 				189E684918C7FB8A00FBD2C2 /* AFMScanner-Prefix.pch */,
@@ -475,6 +478,7 @@
 			files = (
 				189173A318D65DAF00770F2C /* ProgressHUD.bundle in Resources */,
 				189E685718C7FB8A00FBD2C2 /* Images.xcassets in Resources */,
+				18F359A818D6ABF60039639B /* Splash.png in Resources */,
 				189E684618C7FB8A00FBD2C2 /* InfoPlist.strings in Resources */,
 				189E684F18C7FB8A00FBD2C2 /* Main.storyboard in Resources */,
 			);
@@ -647,7 +651,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -663,7 +666,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
