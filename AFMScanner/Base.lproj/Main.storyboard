@@ -82,7 +82,7 @@
                                 </state>
                                 <connections>
                                     <action selector="scanButtonClick:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="5nA-Zd-r2N"/>
-                                    <segue destination="bAK-i1-s3F" kind="modal" id="IdK-hf-Ujz"/>
+                                    <segue destination="bAK-i1-s3F" kind="push" id="IdK-hf-Ujz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1YO-NC-QEC">
