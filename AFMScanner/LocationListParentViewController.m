@@ -39,23 +39,19 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
             //Parse Data
-            NSError *jsonError;
-            if (data)
-            {
-                NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    
-                    _objects = [CensusParentLocation arrayOfModelsFromDictionaries:
-                                json];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (data) {
+                    NSError *jsonError;
+                    NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+                    _objects = [CensusParentLocation arrayOfModelsFromDictionaries:json];
                     [ProgressHUD dismiss];
                     [[self tableView] reloadData];
-                    
-                });
-            }
-            else {
-                [ProgressHUD showError:@"Unable to connect." Interacton:NO];
-                NSLog(@"Unable to connect to webservice");
-            }
+                }
+                else {
+                    [ProgressHUD showError:@"Unable to connect." Interacton:NO];
+                    NSLog(@"Unable to connect to webservice");
+                }
+            });
         }];
     });
 }
