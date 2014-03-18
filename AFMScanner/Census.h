@@ -16,5 +16,5 @@
 @property (nonatomic, strong) NSString *CensusStartDate;
 @property (nonatomic, strong) NSString *CensusEndDate;
 @property (nonatomic, readonly) BOOL isCensusCompleted;
-
+@property (nonatomic, strong) NSString *CensusStatus;
 @end

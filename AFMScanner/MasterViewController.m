@@ -85,6 +85,7 @@
     
     Census* cen = _objects[indexPath.row];
     cell.textLabel.text = cen.CensusNumber;
+    cell.detailTextLabel.text = cen.CensusStatus;
     return cell;
 }
 
