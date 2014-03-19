@@ -8,8 +8,10 @@
 
 #import "EnclosuresViewController.h"
 #import "ProtocolEnclosure.h"
-#import "EnclosureDetailCell.h"
 #import "ProgressHUD.h"
+#import "Enclosure.h"
+#import "EnclosureList.h"
+#import "JSONModel+networking.h"
 @interface EnclosuresViewController (){
     NSMutableArray *_objects;
 }
@@ -30,13 +32,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self loadJSON];
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    gestureRecognizer.cancelsTouchesInView = NO;
+    [self.tableView addGestureRecognizer:gestureRecognizer];
+}
+
+- (void)loadJSON
+{
     [ProgressHUD show:@"Loading..."];
     NSURL *url;
     if (self.enclosureDetailItem != nil)
         url = [NSURL URLWithString:[NSString stringWithFormat:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetEnclosures&CensusID=%@&LocationID=%@", self.enclosureDetailItem.CensusID, self.enclosureDetailItem.ChildLocationID]];
     else
         url = [NSURL URLWithString:[NSString stringWithFormat:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetEnclosure&CensusID=%@&EnclosureNumber=%@", self.censusID, self.scannedEnclosureNumber]];
-        
+    
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
@@ -58,10 +68,6 @@
             });
         }];
     });
-    
-    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    gestureRecognizer.cancelsTouchesInView = NO;
-    [self.tableView addGestureRecognizer:gestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -112,7 +118,49 @@
     else
         cell.enclosureStatus.selectedSegmentIndex = None;
     
+    cell.sectionIndex = indexPath.section;
+    cell.rowIndex = indexPath.row;
+    cell.delegate = self;
+    
     return cell;
+}
+
+- (void) qtyDidUpdate:(EnclosureDetailCell *)cell{
+    [self updateClasses:cell];
+}
+
+- (void) stepperDidUpdate:(EnclosureDetailCell *)cell{
+    [self updateClasses:cell];
+}
+
+- (void) segmentDidUpdate:(EnclosureDetailCell *)cell{
+    [self updateClasses:cell];
+}
+
+- (void)updateClasses:(EnclosureDetailCell *)enclosureCell{
+    Enclosure *enc = (Enclosure*)((ProtocolEnclosure *)_objects[enclosureCell.sectionIndex]).Enclosures[enclosureCell.rowIndex];
+    enc.CensusQTY = enclosureCell.QTY.text.intValue;
+    
+    if (enclosureCell.enclosureStatus.selectedSegmentIndex == Verified){
+        enc.Verified = YES;
+        enc.MissingEnclosure = NO;
+        enc.RetireEnclosure = NO;
+    }
+    else if (enclosureCell.enclosureStatus.selectedSegmentIndex == MissingEnclosure){
+        enc.Verified = NO;
+        enc.MissingEnclosure = YES;
+        enc.RetireEnclosure = NO;
+    }
+    else if (enclosureCell.enclosureStatus.selectedSegmentIndex == RetireEnclosure){
+        enc.Verified = NO;
+        enc.MissingEnclosure = NO;
+        enc.RetireEnclosure = YES;
+    }
+    else{
+        enc.Verified = NO;
+        enc.MissingEnclosure = NO;
+        enc.RetireEnclosure = NO;
+    }
 }
 
 - (void)dismissKeyboard {
@@ -131,55 +179,34 @@ typedef NSInteger EnclosureStatus;
 {
     view.tintColor = [[UIColor alloc] initWithRed:20.0 / 255 green:59.0 / 255 blue:102.0 / 255 alpha:.75];
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+
+- (IBAction)saveClasses:(id)sender{
+    NSMutableArray *enclosures = [[NSMutableArray alloc] init];
+    //NSArray<Enclosure> *enclos;
+    EnclosureList *listOfEnclosures = [[EnclosureList alloc] init];
+    for (ProtocolEnclosure *protEnc in _objects){
+        for (Enclosure *enc in protEnc.Enclosures){
+            [enclosures addObject:enc];
+            //[listOfEnclosures.arrOfEnclosures addObject:enc];
+        }
+    }
+    
+    listOfEnclosures.enclosures = (NSArray<Enclosure> *)[NSArray arrayWithArray:enclosures];
+    NSString *string = [listOfEnclosures toJSONString];
+    
+    [ProgressHUD show:@"Saving..."];
+    [JSONHTTPClient postJSONFromURLWithString:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=SaveCensusEnclosures"
+                                     bodyString:string
+                                   completion:^(id json, JSONModelError *err) {
+                                       //check err, process json ...
+                                       if (err == nil)
+                                       {
+                                           [ProgressHUD showSuccess:@"Your data was saved." Interacton:NO];
+                                       }
+                                       else
+                                           [ProgressHUD showError:@"An error occurred." Interacton:NO];
+                                   }];
+    //[self loadJSON];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

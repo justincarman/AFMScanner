@@ -13,12 +13,19 @@
 - (IBAction)changedTextValue:(id)sender
 {
     self.stepper.value = self.QTY.text.intValue;
+    [self.delegate qtyDidUpdate:self];
 }
 
 - (IBAction)valueChanged:(UIStepper *)sender
 {
     int stepperValue = sender.value;
     self.QTY.text = [NSString stringWithFormat:@"%i", stepperValue];
+    [self.delegate stepperDidUpdate:self];
+}
+
+- (IBAction)segmentControlValueChanged:(DeSelectableSegmentControl *)sender
+{
+    [self.delegate segmentDidUpdate:self];
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1833D02A18D900A800F34E6E /* EnclosureList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1833D02918D900A800F34E6E /* EnclosureList.m */; };
 		1842E0FB18CD12CA0014C39A /* LocationListParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842E0FA18CD12CA0014C39A /* LocationListParentViewController.m */; };
 		1880A02C18D0E232008C8776 /* EnclosureDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880A02B18D0E232008C8776 /* EnclosureDetailCell.m */; };
 		1880F39218D28504005C1224 /* DeSelectableSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880F39118D28504005C1224 /* DeSelectableSegmentControl.m */; };
@@ -61,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1833D02818D900A800F34E6E /* EnclosureList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnclosureList.h; sourceTree = "<group>"; };
+		1833D02918D900A800F34E6E /* EnclosureList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnclosureList.m; sourceTree = "<group>"; };
 		1842E0F918CD12CA0014C39A /* LocationListParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationListParentViewController.h; sourceTree = "<group>"; };
 		1842E0FA18CD12CA0014C39A /* LocationListParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationListParentViewController.m; sourceTree = "<group>"; };
 		1880A02A18D0E232008C8776 /* EnclosureDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnclosureDetailCell.h; sourceTree = "<group>"; };
@@ -330,6 +333,8 @@
 				18CDA9AA18CD6393006ED8E7 /* ProtocolEnclosure.m */,
 				18CDA9AC18CD63A0006ED8E7 /* Enclosure.h */,
 				18CDA9AD18CD63A0006ED8E7 /* Enclosure.m */,
+				1833D02818D900A800F34E6E /* EnclosureList.h */,
+				1833D02918D900A800F34E6E /* EnclosureList.m */,
 			);
 			name = "Census Model";
 			sourceTree = "<group>";
@@ -525,6 +530,7 @@
 				18E5D49D18CBE80F007E0238 /* JSONModelError.m in Sources */,
 				18CDA9A818CD26FE006ED8E7 /* LocationListChildViewController.m in Sources */,
 				18E5D49A18CBE80F007E0238 /* JSONModel.m in Sources */,
+				1833D02A18D900A800F34E6E /* EnclosureList.m in Sources */,
 				18E5D49B18CBE80F007E0238 /* JSONModelArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "DeSelectableSegmentControl.h"
+@class EnclosureDetailCell;
+@protocol EnclosureCellDelegate
+@required
+- (void) qtyDidUpdate:(EnclosureDetailCell *)cell;
+- (void) stepperDidUpdate:(EnclosureDetailCell *)cell;
+- (void) segmentDidUpdate:(EnclosureDetailCell *)cell;
+@end
 
 @interface EnclosureDetailCell : UITableViewCell
 
@@ -18,5 +25,10 @@
 
 - (IBAction)valueChanged:(UIStepper *)sender;
 - (IBAction)changedTextValue:(id)sender;
+- (IBAction)segmentControlValueChanged:(DeSelectableSegmentControl *)sender;
+
+@property (nonatomic, assign) NSInteger sectionIndex;
+@property (nonatomic, assign) NSInteger rowIndex;
+@property (nonatomic, weak) id<EnclosureCellDelegate> delegate;
 
 @end

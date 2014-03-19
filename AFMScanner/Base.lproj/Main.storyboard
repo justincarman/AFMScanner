@@ -285,6 +285,9 @@
                                                 <segment title="Missing"/>
                                                 <segment title="Retired"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="segmentControlValueChanged:" destination="XID-nM-cMx" eventType="valueChanged" id="7i2-Lm-SpB"/>
+                                            </connections>
                                         </segmentedControl>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -302,7 +305,13 @@
                             <outlet property="delegate" destination="oce-LO-TwG" id="cco-dN-FoH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Enclosures" id="v7B-Ue-3oV"/>
+                    <navigationItem key="navigationItem" title="Enclosures" id="v7B-Ue-3oV">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="3vS-UY-esA">
+                            <connections>
+                                <action selector="saveClasses:" destination="oce-LO-TwG" id="72a-QP-pEy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6D-D6-RSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

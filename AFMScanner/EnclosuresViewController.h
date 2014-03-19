@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "CensusChildLocation.h"
-@interface EnclosuresViewController : UITableViewController
+#import "EnclosureDetailCell.h"
+@interface EnclosuresViewController : UITableViewController <EnclosureCellDelegate>
 
 @property (strong, nonatomic) CensusChildLocation *enclosureDetailItem;
 
 @property (strong, nonatomic) NSString *censusID;
 @property (strong, nonatomic) NSString *scannedEnclosureNumber;
+
+- (IBAction)saveClasses:(id)sender;
 
 @end

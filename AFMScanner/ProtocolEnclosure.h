@@ -13,6 +13,6 @@
 @property (nonatomic, strong) NSString *CensusID;
 @property (nonatomic, strong) NSString *ProtocolNumber;
 @property (nonatomic, strong) NSString *ProtocolProjID;
-@property (nonatomic, strong) NSArray <Enclosure> *Enclosures;
+@property (nonatomic, strong) NSMutableArray <Enclosure> *Enclosures;
 
 @end
