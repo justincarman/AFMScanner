@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1808DAC118DBCB15008378C0 /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808DAB518DBCB15008378C0 /* ECPercentDrivenInteractiveTransition.m */; };
+		1808DAC218DBCB15008378C0 /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808DAB718DBCB15008378C0 /* ECSlidingAnimationController.m */; };
+		1808DAC318DBCB15008378C0 /* ECSlidingInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808DABA18DBCB15008378C0 /* ECSlidingInteractiveTransition.m */; };
+		1808DAC418DBCB15008378C0 /* ECSlidingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808DABC18DBCB15008378C0 /* ECSlidingSegue.m */; };
+		1808DAC518DBCB15008378C0 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808DABE18DBCB15008378C0 /* ECSlidingViewController.m */; };
+		1808DAC618DBCB15008378C0 /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808DAC018DBCB15008378C0 /* UIViewController+ECSlidingViewController.m */; };
+		1831E18318DBCF8800AD7180 /* MEMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1831E18218DBCF8800AD7180 /* MEMenuViewController.m */; };
 		1833D02A18D900A800F34E6E /* EnclosureList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1833D02918D900A800F34E6E /* EnclosureList.m */; };
 		1842E0FB18CD12CA0014C39A /* LocationListParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842E0FA18CD12CA0014C39A /* LocationListParentViewController.m */; };
 		1880A02C18D0E232008C8776 /* EnclosureDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880A02B18D0E232008C8776 /* EnclosureDetailCell.m */; };
@@ -33,6 +40,9 @@
 		18CDA9AB18CD6393006ED8E7 /* ProtocolEnclosure.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDA9AA18CD6393006ED8E7 /* ProtocolEnclosure.m */; };
 		18CDA9AE18CD63A0006ED8E7 /* Enclosure.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDA9AD18CD63A0006ED8E7 /* Enclosure.m */; };
 		18CDA9B118CD6624006ED8E7 /* EnclosuresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDA9B018CD6624006ED8E7 /* EnclosuresViewController.m */; };
+		18D757AB18DBD09900D04598 /* METransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D757AA18DBD09900D04598 /* METransitions.m */; };
+		18D757AE18DBD11A00D04598 /* MEZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D757AD18DBD11A00D04598 /* MEZoomAnimationController.m */; };
+		18D757B118DBD31700D04598 /* MEDynamicTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D757B018DBD31700D04598 /* MEDynamicTransition.m */; };
 		18E5D47518CB9C48007E0238 /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D47418CB9C48007E0238 /* ScannerViewController.m */; };
 		18E5D47918CBDDB4007E0238 /* CensusParentLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D47818CBDDB4007E0238 /* CensusParentLocation.m */; };
 		18E5D47C18CBDF06007E0238 /* CensusChildLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5D47B18CBDF06007E0238 /* CensusChildLocation.m */; };
@@ -62,6 +72,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1808DAB418DBCB15008378C0 /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
+		1808DAB518DBCB15008378C0 /* ECPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
+		1808DAB618DBCB15008378C0 /* ECSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingAnimationController.h; sourceTree = "<group>"; };
+		1808DAB718DBCB15008378C0 /* ECSlidingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingAnimationController.m; sourceTree = "<group>"; };
+		1808DAB818DBCB15008378C0 /* ECSlidingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingConstants.h; sourceTree = "<group>"; };
+		1808DAB918DBCB15008378C0 /* ECSlidingInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingInteractiveTransition.h; sourceTree = "<group>"; };
+		1808DABA18DBCB15008378C0 /* ECSlidingInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingInteractiveTransition.m; sourceTree = "<group>"; };
+		1808DABB18DBCB15008378C0 /* ECSlidingSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingSegue.h; sourceTree = "<group>"; };
+		1808DABC18DBCB15008378C0 /* ECSlidingSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingSegue.m; sourceTree = "<group>"; };
+		1808DABD18DBCB15008378C0 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
+		1808DABE18DBCB15008378C0 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
+		1808DABF18DBCB15008378C0 /* UIViewController+ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECSlidingViewController.h"; sourceTree = "<group>"; };
+		1808DAC018DBCB15008378C0 /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
+		1831E18118DBCF8800AD7180 /* MEMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEMenuViewController.h; sourceTree = "<group>"; };
+		1831E18218DBCF8800AD7180 /* MEMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEMenuViewController.m; sourceTree = "<group>"; };
 		1833D02818D900A800F34E6E /* EnclosureList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnclosureList.h; sourceTree = "<group>"; };
 		1833D02918D900A800F34E6E /* EnclosureList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnclosureList.m; sourceTree = "<group>"; };
 		1842E0F918CD12CA0014C39A /* LocationListParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationListParentViewController.h; sourceTree = "<group>"; };
@@ -104,6 +129,12 @@
 		18CDA9AD18CD63A0006ED8E7 /* Enclosure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enclosure.m; sourceTree = "<group>"; };
 		18CDA9AF18CD6624006ED8E7 /* EnclosuresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnclosuresViewController.h; sourceTree = "<group>"; };
 		18CDA9B018CD6624006ED8E7 /* EnclosuresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnclosuresViewController.m; sourceTree = "<group>"; };
+		18D757A918DBD09900D04598 /* METransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = METransitions.h; sourceTree = "<group>"; };
+		18D757AA18DBD09900D04598 /* METransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = METransitions.m; sourceTree = "<group>"; };
+		18D757AC18DBD11A00D04598 /* MEZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEZoomAnimationController.h; sourceTree = "<group>"; };
+		18D757AD18DBD11A00D04598 /* MEZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEZoomAnimationController.m; sourceTree = "<group>"; };
+		18D757AF18DBD31700D04598 /* MEDynamicTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEDynamicTransition.h; sourceTree = "<group>"; };
+		18D757B018DBD31700D04598 /* MEDynamicTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEDynamicTransition.m; sourceTree = "<group>"; };
 		18E5D47318CB9C48007E0238 /* ScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
 		18E5D47418CB9C48007E0238 /* ScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
 		18E5D47718CBDDB4007E0238 /* CensusParentLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CensusParentLocation.h; sourceTree = "<group>"; };
@@ -162,6 +193,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1808DAB318DBCB15008378C0 /* ECSlidingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1831E17F18DBCF3A00AD7180 /* View Controllers */,
+				1808DAB418DBCB15008378C0 /* ECPercentDrivenInteractiveTransition.h */,
+				1808DAB518DBCB15008378C0 /* ECPercentDrivenInteractiveTransition.m */,
+				1808DAB618DBCB15008378C0 /* ECSlidingAnimationController.h */,
+				1808DAB718DBCB15008378C0 /* ECSlidingAnimationController.m */,
+				1808DAB818DBCB15008378C0 /* ECSlidingConstants.h */,
+				1808DAB918DBCB15008378C0 /* ECSlidingInteractiveTransition.h */,
+				1808DABA18DBCB15008378C0 /* ECSlidingInteractiveTransition.m */,
+				1808DABB18DBCB15008378C0 /* ECSlidingSegue.h */,
+				1808DABC18DBCB15008378C0 /* ECSlidingSegue.m */,
+				18D757AF18DBD31700D04598 /* MEDynamicTransition.h */,
+				18D757B018DBD31700D04598 /* MEDynamicTransition.m */,
+				18D757A918DBD09900D04598 /* METransitions.h */,
+				18D757AA18DBD09900D04598 /* METransitions.m */,
+				1808DABD18DBCB15008378C0 /* ECSlidingViewController.h */,
+				18D757AC18DBD11A00D04598 /* MEZoomAnimationController.h */,
+				18D757AD18DBD11A00D04598 /* MEZoomAnimationController.m */,
+				1808DABE18DBCB15008378C0 /* ECSlidingViewController.m */,
+				1808DABF18DBCB15008378C0 /* UIViewController+ECSlidingViewController.h */,
+				1808DAC018DBCB15008378C0 /* UIViewController+ECSlidingViewController.m */,
+			);
+			path = ECSlidingViewController;
+			sourceTree = "<group>";
+		};
+		1831E17F18DBCF3A00AD7180 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1831E18018DBCF4700AD7180 /* Menu View Controller */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1831E18018DBCF4700AD7180 /* Menu View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1831E18118DBCF8800AD7180 /* MEMenuViewController.h */,
+				1831E18218DBCF8800AD7180 /* MEMenuViewController.m */,
+			);
+			name = "Menu View Controller";
+			sourceTree = "<group>";
+		};
 		1880A02918D0E1E4008C8776 /* Custom Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +297,7 @@
 		189E682F18C7FB8900FBD2C2 = {
 			isa = PBXGroup;
 			children = (
+				1808DAB318DBCB15008378C0 /* ECSlidingViewController */,
 				1891739F18D65DAF00770F2C /* ProgressHUD */,
 				18E5D47D18CBE80F007E0238 /* JSONModel */,
 				189E684118C7FB8A00FBD2C2 /* AFMScanner */,
@@ -505,6 +581,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				189E684C18C7FB8A00FBD2C2 /* AppDelegate.m in Sources */,
+				1808DAC118DBCB15008378C0 /* ECPercentDrivenInteractiveTransition.m in Sources */,
+				1808DAC518DBCB15008378C0 /* ECSlidingViewController.m in Sources */,
 				18E5D47518CB9C48007E0238 /* ScannerViewController.m in Sources */,
 				18E5D4A118CBE80F007E0238 /* JSONModel+networking.m in Sources */,
 				1842E0FB18CD12CA0014C39A /* LocationListParentViewController.m in Sources */,
@@ -515,19 +593,27 @@
 				1880A02C18D0E232008C8776 /* EnclosureDetailCell.m in Sources */,
 				189173A418D65DAF00770F2C /* ProgressHUD.m in Sources */,
 				189E684818C7FB8A00FBD2C2 /* main.m in Sources */,
+				1831E18318DBCF8800AD7180 /* MEMenuViewController.m in Sources */,
 				18E5D49C18CBE80F007E0238 /* JSONModelClassProperty.m in Sources */,
+				1808DAC218DBCB15008378C0 /* ECSlidingAnimationController.m in Sources */,
 				18E5D4A318CBE80F007E0238 /* JSONValueTransformer.m in Sources */,
 				18E5D49918CBE80F007E0238 /* JSONModel+CoreData.m in Sources */,
 				189E687518C808AE00FBD2C2 /* Census.m in Sources */,
+				1808DAC618DBCB15008378C0 /* UIViewController+ECSlidingViewController.m in Sources */,
 				18E5D49F18CBE80F007E0238 /* JSONAPI.m in Sources */,
+				1808DAC318DBCB15008378C0 /* ECSlidingInteractiveTransition.m in Sources */,
 				18E5D49E18CBE80F007E0238 /* NSArray+JSONModel.m in Sources */,
 				18CDA9AB18CD6393006ED8E7 /* ProtocolEnclosure.m in Sources */,
+				18D757B118DBD31700D04598 /* MEDynamicTransition.m in Sources */,
 				18CDA9B118CD6624006ED8E7 /* EnclosuresViewController.m in Sources */,
+				1808DAC418DBCB15008378C0 /* ECSlidingSegue.m in Sources */,
 				18E5D4A218CBE80F007E0238 /* JSONKeyMapper.m in Sources */,
 				18E5D47C18CBDF06007E0238 /* CensusChildLocation.m in Sources */,
 				18CDA9AE18CD63A0006ED8E7 /* Enclosure.m in Sources */,
 				189E685518C7FB8A00FBD2C2 /* DetailViewController.m in Sources */,
+				18D757AB18DBD09900D04598 /* METransitions.m in Sources */,
 				18E5D49D18CBE80F007E0238 /* JSONModelError.m in Sources */,
+				18D757AE18DBD11A00D04598 /* MEZoomAnimationController.m in Sources */,
 				18CDA9A818CD26FE006ED8E7 /* LocationListChildViewController.m in Sources */,
 				18E5D49A18CBE80F007E0238 /* JSONModel.m in Sources */,
 				1833D02A18D900A800F34E6E /* EnclosureList.m in Sources */,
@@ -598,6 +684,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -637,6 +724,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -663,7 +751,8 @@
 				GCC_PREFIX_HEADER = "AFMScanner/AFMScanner-Prefix.pch";
 				INFOPLIST_FILE = "AFMScanner/AFMScanner-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "C4CC1AE1-9271-4A9C-95FF-BDAB0F5C9A98";
+				PROVISIONING_PROFILE = "A46FFA0A-9657-4917-B542-5BB44AE5B075";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -678,7 +767,8 @@
 				GCC_PREFIX_HEADER = "AFMScanner/AFMScanner-Prefix.pch";
 				INFOPLIST_FILE = "AFMScanner/AFMScanner-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "C4CC1AE1-9271-4A9C-95FF-BDAB0F5C9A98";
+				PROVISIONING_PROFILE = "A46FFA0A-9657-4917-B542-5BB44AE5B075";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

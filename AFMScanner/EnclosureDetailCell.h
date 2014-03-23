@@ -31,4 +31,6 @@
 @property (nonatomic, assign) NSInteger rowIndex;
 @property (nonatomic, weak) id<EnclosureCellDelegate> delegate;
 
+@property (weak, nonatomic) IBOutlet UILabel *oldQTY;
+
 @end

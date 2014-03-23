@@ -32,7 +32,7 @@
 {
     [super viewDidLoad];
     [ProgressHUD show:@"Loading..."];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetCensusLocations&CensusID=%@", self.locationListParentDetailItem.CensusID]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://sb5current.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetCensusLocations&CensusID=%@", self.locationListParentDetailItem.CensusID]];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     

@@ -17,4 +17,6 @@
 @property (nonatomic) BOOL Verified;
 @property (nonatomic) BOOL MissingEnclosure;
 @property (nonatomic) BOOL RetireEnclosure;
+@property (nonatomic, strong) NSString *OldCount;
+@property (nonatomic) BOOL CageMissing;
 @end

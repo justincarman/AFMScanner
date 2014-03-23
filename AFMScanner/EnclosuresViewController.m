@@ -43,9 +43,9 @@
     [ProgressHUD show:@"Loading..."];
     NSURL *url;
     if (self.enclosureDetailItem != nil)
-        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetEnclosures&CensusID=%@&LocationID=%@", self.enclosureDetailItem.CensusID, self.enclosureDetailItem.ChildLocationID]];
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://sb5current.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetEnclosures&CensusID=%@&LocationID=%@", self.enclosureDetailItem.CensusID, self.enclosureDetailItem.ChildLocationID]];
     else
-        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetEnclosure&CensusID=%@&EnclosureNumber=%@", self.censusID, self.scannedEnclosureNumber]];
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://sb5current.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=GetEnclosure&CensusID=%@&EnclosureNumber=%@", self.censusID, self.scannedEnclosureNumber]];
     
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -104,6 +104,7 @@
     Enclosure *enc = (Enclosure *) loc.Enclosures[indexPath.row];
     cell.enclosureNumber.text = enc.EnclosureNumber;
     cell.QTY.text =[NSString stringWithFormat:@"%i", enc.CensusQTY];
+    cell.oldQTY.text = enc.OldCount;
     cell.stepper.value = enc.CensusQTY;
     if (enc.Verified)
     {
@@ -195,7 +196,7 @@ typedef NSInteger EnclosureStatus;
     NSString *string = [listOfEnclosures toJSONString];
     
     [ProgressHUD show:@"Saving..."];
-    [JSONHTTPClient postJSONFromURLWithString:@"http://betaora13.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=SaveCensusEnclosures"
+    [JSONHTTPClient postJSONFromURLWithString:@"http://sb5current.dev18.development.infoedglobal.com/FMNET2/Mobile/Handlers/CensusHandler.ashx?method=SaveCensusEnclosures"
                                      bodyString:string
                                    completion:^(id json, JSONModelError *err) {
                                        //check err, process json ...
